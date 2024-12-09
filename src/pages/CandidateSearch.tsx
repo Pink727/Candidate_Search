@@ -63,7 +63,7 @@ const CandidateSearch = () => {
         <ul>
           {candidates.length > 0 && currentIndex < candidates.length ? (
             <>
-              <CandidateCard key={candidates[currentIndex].id} candidate={candidates[currentIndex]} onDelete={handleSkip} />
+              <CandidateCard key={candidates[currentIndex].id} candidate={candidates[currentIndex]} />
               <button onClick={handleSave}>+</button>
               <button onClick={handleSkip}>-</button>
             </>

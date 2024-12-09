@@ -1,8 +1,8 @@
-import { useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
+import CandidateCard from '../components/CandidateCard';
 import Candidate from '../interfaces/Candidate.interface';
-import CandidateCard from '../components/CandidateCard'; 
 
-const SavedCandidates = () => {
+const SavedCandidates: React.FC = () => {
   const [savedCandidates, setSavedCandidates] = useState<Candidate[]>([]);
 
   useEffect(() => {
@@ -25,7 +25,8 @@ const SavedCandidates = () => {
         <ul>
           {savedCandidates.map(candidate => (
             <li key={candidate.id}>
-              <CandidateCard candidate={candidate} onDelete={() => deleteCandidate(candidate.id)} />
+              <CandidateCard candidate={candidate} />
+              <button onClick={() => deleteCandidate(candidate.id)}>Delete</button>
             </li>
           ))}
         </ul>
