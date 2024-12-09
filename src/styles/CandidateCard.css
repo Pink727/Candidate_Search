@@ -5,6 +5,7 @@
   text-align: center;
   margin: 16px;
   list-style: none;
+  background-color: black;
 }
 
 .candidate-card img {
