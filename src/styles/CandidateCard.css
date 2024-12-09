@@ -8,7 +8,6 @@
   background-color: black;
   display: flex;
   flex-direction: column;
-  max-width: 400px; /* Set a maximum width */
   width: 100%; /* Allow the card to shrink */
   box-sizing: border-box; /* Include padding and border in the element's total width and height */
 }
@@ -35,9 +34,6 @@
 }
 
 @media (max-width: 768px) {
-  .candidate-card {
-    max-width: 90vw; /* Adjust max width for smaller screens */
-  }
 
   .candidate-card a {
     font-size: 3vw; /* Adjust font size for smaller screens */
