@@ -7,6 +7,7 @@ interface Candidate {
   location?: string;
   email?: string;
   company?: string;
+  bio?: string; // Added bio property
 }
 
 export default Candidate;

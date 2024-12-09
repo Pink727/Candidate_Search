@@ -17,6 +17,7 @@ const CandidateCard: React.FC<CandidateCardProps> = ({ candidate }) => {
       <p>Location: {candidate.location || 'user has not added that info'}</p>
       <p>Email: {candidate.email || 'user has not added that info'}</p>
       <p>Company: {candidate.company || 'user has not added that info'}</p>
+      <p>Bio: {candidate.bio || 'user has not added that info'}</p> {/* Added bio property */}
     </li>
   );
 };
