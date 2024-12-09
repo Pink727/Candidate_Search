@@ -5,7 +5,7 @@ function App() {
   return (
     <>
       <Nav />
-      <main>
+      <main style={{ paddingTop: '60px' }}> {/* Add padding to avoid content being hidden behind the nav */}
         <Outlet />
       </main>
     </>
