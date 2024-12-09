@@ -52,12 +52,11 @@ const SavedCandidates: React.FC = () => {
   return (
     <div>
       <h1>Saved Candidates</h1>
-      <div>
-        <label>
-          Filter:
-          <input type="text" value={filterText} onChange={handleFilter} className="filter-input" />
+      <div className="filter-sort-container">
+        <label className="filter-label">
+          Filter: <input type="text" value={filterText} onChange={handleFilter} className="filter-input" />
         </label>
-        <label>
+        <label className="sort-label">
           Sort by:
           <select value={sortKey} onChange={(e) => handleSort(e.target.value)}>
             <option value="name">Name</option>
@@ -93,7 +92,7 @@ const SavedCandidates: React.FC = () => {
                 <td>{candidate.company}</td>
                 <td className="bio-column">{candidate.bio}</td>
                 <td><a href={`https://github.com/${candidate.login}`} target="_blank" rel="noopener noreferrer">{candidate.login}</a></td>
-                <td><button onClick={() => deleteCandidate(candidate.id)}>Delete</button></td>
+                <td><button className="delete-button" onClick={() => deleteCandidate(candidate.id)}>Delete</button></td>
               </tr>
             ))}
           </tbody>
