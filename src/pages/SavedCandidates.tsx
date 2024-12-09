@@ -30,19 +30,19 @@ const SavedCandidates: React.FC = () => {
               <th>Location</th>
               <th>Email</th>
               <th>Company</th>
-              <th>BIO</th>
+              <th className="bio-column">BIO</th>
               <th>Reject</th>
             </tr>
           </thead>
           <tbody>
             {savedCandidates.map((candidate, index) => (
               <tr key={candidate.id} className={index % 2 === 0 ? 'even-row' : 'odd-row'}>
-                <td><img src={candidate.avatar_url} alt={candidate.name} width="50" /></td>
+                <td><img src={candidate.avatar_url} alt={candidate.name} /></td>
                 <td>{candidate.name}</td>
                 <td>{candidate.location}</td>
                 <td>{candidate.email}</td>
                 <td>{candidate.company}</td>
-                <td>{candidate.bio}</td>
+                <td className="bio-column">{candidate.bio}</td>
                 <td><button onClick={() => deleteCandidate(candidate.id)}>Delete</button></td>
               </tr>
             ))}

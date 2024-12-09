@@ -9,13 +9,21 @@
   min-height: 50px; /* Set a minimum height for rows */
   max-height: 100px; /* Set a maximum height for rows */
   overflow: hidden; /* Hide overflow content */
-  white-space: nowrap; /* Prevent text from wrapping */
-  text-overflow: ellipsis; /* Add ellipsis for overflow text */
 }
 
 .candidates-table th {
-  background-color: #f2f2f2;
+  background-color: black;
+  color: white;
   text-align: left;
+}
+
+.candidates-table td {
+  font-size: 14px; /* Adjust font size as needed */
+}
+
+.candidates-table .bio-column {
+  white-space: normal; /* Allow text to wrap */
+  overflow: visible; /* Show overflow content */
 }
 
 .even-row {
@@ -34,6 +42,14 @@
   width: 50px;
 }
 
-.candidates-table td {
-  font-size: 14px; /* Adjust font size as needed */
+@media (max-width: 768px) {
+  .candidates-table th, .candidates-table td {
+    font-size: 12px; /* Adjust font size for smaller screens */
+    padding: 4px; /* Adjust padding for smaller screens */
+  }
+
+  .candidates-table img {
+    height: 40px; /* Adjust image size for smaller screens */
+    width: 40px;
+  }
 }
