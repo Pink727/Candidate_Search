@@ -44,9 +44,10 @@ The Candidate Management App is a web application that allows users to search fo
 
 You can access the deployed site at [Candidate Management App](https://pink727-cs.netlify.app/).
 
-![Candidate Search](src/img/CandidateSearch.PNG)
+<img src="src/img/CandidateSearch.PNG" alt="Candidate Search" width="400">
 
-![Saved Candidates](src/img/SavedCandidates.PNG)
+<img src="src/img/SavedCandidates.PNG" alt="Saved Candidates" width="400">
+
 
 ## Features
 
