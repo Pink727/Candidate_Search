@@ -13,8 +13,8 @@ const CandidateCard: React.FC<CandidateCardProps> = ({ candidate }) => {
       <a href={candidate.html_url} target="_blank" rel="noopener noreferrer">
         {candidate.login}
       </a>
-      <p>Bio: {candidate.bio || 'user has not added that info'}</p>
       <p>Name: {candidate.name || 'user has not added that info'}</p>
+      <p>Bio: {candidate.bio || 'user has not added that info'}</p>
       <p>Location: {candidate.location || 'user has not added that info'}</p>
       <p>Email: {candidate.email || 'user has not added that info'}</p>
       <p>Company: {candidate.company || 'user has not added that info'}</p>

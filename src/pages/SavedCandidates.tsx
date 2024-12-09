@@ -31,6 +31,7 @@ const SavedCandidates: React.FC = () => {
               <th>Email</th>
               <th>Company</th>
               <th className="bio-column">BIO</th>
+              <th>GitHub</th>
               <th>Reject</th>
             </tr>
           </thead>
@@ -43,6 +44,7 @@ const SavedCandidates: React.FC = () => {
                 <td>{candidate.email}</td>
                 <td>{candidate.company}</td>
                 <td className="bio-column">{candidate.bio}</td>
+                <td><a href={`https://github.com/${candidate.login}`} target="_blank" rel="noopener noreferrer">{candidate.login}</a></td>
                 <td><button onClick={() => deleteCandidate(candidate.id)}>Delete</button></td>
               </tr>
             ))}
