@@ -4,6 +4,7 @@ import '../styles/CandidateCard.css';
 
 interface CandidateCardProps {
   candidate: Candidate;
+  onDelete: () => void;
 }
 
 const CandidateCard: React.FC<CandidateCardProps> = ({ candidate }) => {
