@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import Candidate from '../interfaces/Candidate.interface';
+import CandidateCard from '../components/CandidateCard'; 
 
 const SavedCandidates = () => {
   const [savedCandidates, setSavedCandidates] = useState<Candidate[]>([]);
@@ -8,6 +9,12 @@ const SavedCandidates = () => {
     const saved = JSON.parse(localStorage.getItem('savedCandidates') || '[]');
     setSavedCandidates(saved);
   }, []);
+
+  const deleteCandidate = (id: number) => {
+    const updatedCandidates = savedCandidates.filter(candidate => candidate.id !== id);
+    setSavedCandidates(updatedCandidates);
+    localStorage.setItem('savedCandidates', JSON.stringify(updatedCandidates));
+  };
 
   return (
     <div>
@@ -18,14 +25,7 @@ const SavedCandidates = () => {
         <ul>
           {savedCandidates.map(candidate => (
             <li key={candidate.id}>
-              <img src={candidate.avatar_url} alt={candidate.login} width="50" />
-              <a href={candidate.html_url} target="_blank" rel="noopener noreferrer">
-                {candidate.login}
-              </a>
-              <p>Name: {candidate.name}</p>
-              <p>Location: {candidate.location}</p>
-              <p>Email: {candidate.email}</p>
-              <p>Company: {candidate.company}</p>
+              <CandidateCard candidate={candidate} onDelete={() => deleteCandidate(candidate.id)} />
             </li>
           ))}
         </ul>
