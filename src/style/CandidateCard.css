@@ -1,0 +1,23 @@
+.candidate-card {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 16px;
+  text-align: center;
+  margin: 16px;
+  list-style: none;
+}
+
+.candidate-card img {
+  border-radius: 50%;
+  margin-bottom: 8px;
+}
+
+.candidate-card a {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.candidate-card p {
+  margin: 4px 0;
+}
