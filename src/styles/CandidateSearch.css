@@ -1,6 +1,14 @@
 .candidate-container {
   display: flex;
+  flex-direction: column;
   align-items: center;
+}
+
+.button-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 10px;
 }
 
 .save-button {
@@ -8,8 +16,9 @@
   color: white;
   border: none;
   padding: 10px;
-  margin-right: 10px;
   cursor: pointer;
+  flex: 1;
+  margin-right: 5px;
 }
 
 .skip-button {
@@ -17,6 +26,7 @@
   color: white;
   border: none;
   padding: 10px;
-  margin-left: 10px;
   cursor: pointer;
+  flex: 1;
+  margin-left: 5px;
 }

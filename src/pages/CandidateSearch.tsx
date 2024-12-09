@@ -64,9 +64,11 @@ const CandidateSearch = () => {
         <ul>
           {candidates.length > 0 && currentIndex < candidates.length ? (
             <div className="candidate-container">
-              <button className="save-button" onClick={handleSave}>+</button>
               <CandidateCard key={candidates[currentIndex].id} candidate={candidates[currentIndex]} />
-              <button className="skip-button" onClick={handleSkip}>-</button>
+              <div className="button-container">
+                <button className="save-button" onClick={handleSave}>+</button>
+                <button className="skip-button" onClick={handleSkip}>-</button>
+              </div>
             </div>
           ) : (
             <p>No more candidates available.</p>
