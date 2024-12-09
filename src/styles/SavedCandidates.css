@@ -1,0 +1,39 @@
+.candidates-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.candidates-table th, .candidates-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  min-height: 50px; /* Set a minimum height for rows */
+  max-height: 100px; /* Set a maximum height for rows */
+  overflow: hidden; /* Hide overflow content */
+  white-space: nowrap; /* Prevent text from wrapping */
+  text-overflow: ellipsis; /* Add ellipsis for overflow text */
+}
+
+.candidates-table th {
+  background-color: #f2f2f2;
+  text-align: left;
+}
+
+.even-row {
+  background-color: gray;
+  color: white;
+}
+
+.odd-row {
+  background-color: black;
+  color: white;
+}
+
+.candidates-table img {
+  border-radius: 50%;
+  height: 50px; /* Ensure images fit within the row height */
+  width: 50px;
+}
+
+.candidates-table td {
+  font-size: 14px; /* Adjust font size as needed */
+}

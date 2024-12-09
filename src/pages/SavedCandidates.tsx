@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import CandidateCard from '../components/CandidateCard';
 import Candidate from '../interfaces/Candidate.interface';
+import '../styles/SavedCandidates.css';
 
 const SavedCandidates: React.FC = () => {
   const [savedCandidates, setSavedCandidates] = useState<Candidate[]>([]);
@@ -12,8 +12,8 @@ const SavedCandidates: React.FC = () => {
 
   const deleteCandidate = (id: number) => {
     const updatedCandidates = savedCandidates.filter(candidate => candidate.id !== id);
-    setSavedCandidates(updatedCandidates);
     localStorage.setItem('savedCandidates', JSON.stringify(updatedCandidates));
+    setSavedCandidates(updatedCandidates);
   };
 
   return (
@@ -22,14 +22,32 @@ const SavedCandidates: React.FC = () => {
       {savedCandidates.length === 0 ? (
         <p>No candidates have been accepted.</p>
       ) : (
-        <ul>
-          {savedCandidates.map(candidate => (
-            <li key={candidate.id}>
-              <CandidateCard candidate={candidate} />
-              <button onClick={() => deleteCandidate(candidate.id)}>Delete</button>
-            </li>
-          ))}
-        </ul>
+        <table className="candidates-table">
+          <thead>
+            <tr>
+              <th>Image</th>
+              <th>Name</th>
+              <th>Location</th>
+              <th>Email</th>
+              <th>Company</th>
+              <th>BIO</th>
+              <th>Reject</th>
+            </tr>
+          </thead>
+          <tbody>
+            {savedCandidates.map((candidate, index) => (
+              <tr key={candidate.id} className={index % 2 === 0 ? 'even-row' : 'odd-row'}>
+                <td><img src={candidate.avatar_url} alt={candidate.name} width="50" /></td>
+                <td>{candidate.name}</td>
+                <td>{candidate.location}</td>
+                <td>{candidate.email}</td>
+                <td>{candidate.company}</td>
+                <td>{candidate.bio}</td>
+                <td><button onClick={() => deleteCandidate(candidate.id)}>Delete</button></td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
       )}
     </div>
   );
