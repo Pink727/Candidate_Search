@@ -31,7 +31,8 @@ const SavedCandidates: React.FC = () => {
       (candidate.name?.toLowerCase() ?? '').includes(filterText.toLowerCase()) ||
       (candidate.location?.toLowerCase() ?? '').includes(filterText.toLowerCase()) ||
       (candidate.email?.toLowerCase() ?? '').includes(filterText.toLowerCase()) ||
-      (candidate.company?.toLowerCase() ?? '').includes(filterText.toLowerCase())
+      (candidate.company?.toLowerCase() ?? '').includes(filterText.toLowerCase()) ||
+      (candidate.login?.toLowerCase() ?? '').includes(filterText.toLowerCase())
     );
   };
 
@@ -54,7 +55,7 @@ const SavedCandidates: React.FC = () => {
       <div>
         <label>
           Filter:
-          <input type="text" value={filterText} onChange={handleFilter} />
+          <input type="text" value={filterText} onChange={handleFilter} className="filter-input" />
         </label>
         <label>
           Sort by:

@@ -53,3 +53,7 @@
     width: 40px;
   }
 }
+
+.filter-input {
+  max-width: 50%;
+}
