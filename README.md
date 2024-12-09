@@ -11,6 +11,7 @@ The Candidate Management App is a web application that allows users to search fo
 
 - [Installation](#installation)
 - [Usage](#usage)
+- [Deployed Site](#deployed-site) 
 - [Features](#features)
 - [Technologies Used](#technologies-used)
 - [License](#license)
