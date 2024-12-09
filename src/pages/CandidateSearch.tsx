@@ -7,6 +7,7 @@ const CandidateSearch = () => {
   const [candidates, setCandidates] = useState<Candidate[]>([]);
   const [loading, setLoading] = useState(false);
   const [searchTerm, setSearchTerm] = useState('');
+  const [currentIndex, setCurrentIndex] = useState(0);
 
   const fetchCandidates = async () => {
     setLoading(true);
@@ -21,7 +22,6 @@ const CandidateSearch = () => {
     const data = await searchGithubUser(searchTerm);
     setCandidates([data]);
     setLoading(false);
-    saveToLocalStorage(data);
   };
 
   const saveToLocalStorage = (candidate: Candidate) => {
@@ -30,13 +30,18 @@ const CandidateSearch = () => {
     localStorage.setItem('savedCandidates', JSON.stringify(savedCandidates));
   };
 
-  const loadFromLocalStorage = () => {
-    const savedCandidates = JSON.parse(localStorage.getItem('savedCandidates') || '[]');
-    setCandidates(savedCandidates);
+  const handleSave = () => {
+    if (candidates[currentIndex]) {
+      saveToLocalStorage(candidates[currentIndex]);
+      setCurrentIndex(currentIndex + 1);
+    }
+  };
+
+  const handleSkip = () => {
+    setCurrentIndex(currentIndex + 1);
   };
 
   useEffect(() => {
-    loadFromLocalStorage();
     fetchCandidates();
   }, []);
 
@@ -56,9 +61,15 @@ const CandidateSearch = () => {
         <p>Loading...</p>
       ) : (
         <ul>
-          {candidates.map(candidate => (
-            <CandidateCard key={candidate.id} candidate={candidate} />
-          ))}
+          {candidates.length > 0 && currentIndex < candidates.length ? (
+            <>
+              <CandidateCard key={candidates[currentIndex].id} candidate={candidates[currentIndex]} />
+              <button onClick={handleSave}>+</button>
+              <button onClick={handleSkip}>-</button>
+            </>
+          ) : (
+            <p>No more candidates available.</p>
+          )}
         </ul>
       )}
     </div>
