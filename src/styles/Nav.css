@@ -1,32 +1,37 @@
+/* Styles for the navigation bar */
 .nav {
-  position: fixed;
+  position: fixed; /* Fix the navbar at the top */
   top: 0;
   left: 0;
-  width: 100%;
+  width: 100%; /* Full width */
   background-color: rgba(0, 0, 0, 0.7); /* Transparent dark background */
-  padding: 10px;
+  padding: 10px; /* Padding inside the navbar */
   z-index: 1000; /* Ensure it stays on top of other elements */
 }
 
+/* Styles for the unordered list inside the navbar */
 .nav ul {
-  list-style: none;
-  display: flex;
-  justify-content: center;
-  margin: 0;
-  padding: 0;
+  list-style: none; /* Remove default list styling */
+  display: flex; /* Use flexbox for layout */
+  justify-content: center; /* Center the list items */
+  margin: 0; /* Remove default margin */
+  padding: 0; /* Remove default padding */
 }
 
+/* Styles for each navigation item */
 .nav-item {
-  margin: 0 15px;
+  margin: 0 15px; /* Horizontal margin between items */
 }
 
+/* Styles for each navigation link */
 .nav-link {
-  color: white;
-  text-decoration: none;
-  font-size: 18px;
-  transition: color 0.3s ease;
+  color: white; /* White text color */
+  text-decoration: none; /* Remove underline */
+  font-size: 18px; /* Font size */
+  transition: color 0.3s ease; /* Smooth transition for color change */
 }
 
+/* Styles for navigation link on hover */
 .nav-link:hover {
   color: #ccc; /* Change color on hover */
 }

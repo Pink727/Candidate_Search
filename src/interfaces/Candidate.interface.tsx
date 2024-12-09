@@ -1,13 +1,14 @@
+// Interface to define the structure of a Candidate object
 interface Candidate {
-  login: string;
-  id: number;
-  avatar_url: string;
-  html_url: string;
-  name: string;
-  location: string;
-  email: string;
-  company: string;
-  bio?: string; // Added bio property
+  login: string; // GitHub username
+  id: number; // Unique identifier
+  avatar_url: string; // URL to the avatar image
+  html_url: string; // URL to the GitHub profile
+  name: string; // Candidate's name
+  location: string; // Candidate's location
+  email: string; // Candidate's email
+  company: string; // Candidate's company
+  bio?: string; // Candidate's bio (optional)
 }
 
 export default Candidate;

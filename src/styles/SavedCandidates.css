@@ -1,46 +1,48 @@
+/* Styles for the candidates table */
 .candidates-table {
-  width: 100%;
-  border-collapse: collapse;
+  width: 100%; /* Full width */
+  border-collapse: collapse; /* Collapse borders */
 }
 
+/* Styles for table headers and cells */
 .candidates-table th, .candidates-table td {
-  border: 1px solid #ddd;
-  padding: 8px;
+  border: 1px solid #ddd; /* Light gray border */
+  padding: 8px; /* Padding inside cells */
   min-height: 50px; /* Set a minimum height for rows */
   max-height: 100px; /* Set a maximum height for rows */
   overflow: hidden; /* Hide overflow content */
 }
 
+/* Styles for table headers */
 .candidates-table th {
-  background-color: black;
-  color: white;
-  text-align: left;
+  background-color: black; /* Black background */
+  color: white; /* White text */
+  text-align: left; /* Left align text */
 }
 
+/* Styles for table cells */
 .candidates-table td {
   font-size: 14px; /* Adjust font size as needed */
 }
 
+/* Styles for the bio column */
 .candidates-table .bio-column {
   white-space: normal; /* Allow text to wrap */
   overflow: visible; /* Show overflow content */
 }
 
+/* Styles for even rows */
 .even-row {
-  background-color: gray;
-  color: white;
+  background-color: gray; /* Gray background */
+  color: white; /* White text */
 }
 
+/* Styles for odd rows */
 .odd-row {
-  background-color: black;
-  color: white;
+  background-color: black; /* Black background */
+  color: white; /* White text */
 }
 
-.candidates-table img {
-  border-radius: 50%;
-  height: 50px; /* Ensure images fit within the row height */
-  width: 50px;
-}
 
 @media (max-width: 768px) {
   .candidates-table th, .candidates-table td {

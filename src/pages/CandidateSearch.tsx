@@ -4,37 +4,46 @@ import CandidateCard from '../components/CandidateCard';
 import Candidate from '../interfaces/Candidate.interface';
 import '../styles/CandidateSearch.css';
 
+// Main component for candidate search functionality
 const CandidateSearch = () => {
+  // State to store the list of candidates
   const [candidates, setCandidates] = useState<Candidate[]>([]);
+  // State to manage loading status
   const [loading, setLoading] = useState(false);
+  // State to store the search term input by the user
   const [searchTerm, setSearchTerm] = useState('');
+  // State to keep track of the current candidate index
   const [currentIndex, setCurrentIndex] = useState(0);
 
+  // Function to fetch all candidates from GitHub
   const fetchCandidates = async () => {
-    setLoading(true);
-    const data = await searchGithub();
-    setCandidates(data);
-    setLoading(false);
+    setLoading(true); // Set loading to true while fetching data
+    const data = await searchGithub(); // Fetch data from GitHub
+    setCandidates(data); // Update candidates state with fetched data
+    setLoading(false); // Set loading to false after data is fetched
   };
 
+  // Function to handle search form submission
   const handleSearch = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setLoading(true);
-    const data = await searchGithubUser(searchTerm);
-    setCandidates([data]);
-    setLoading(false);
+    e.preventDefault(); // Prevent default form submission behavior
+    setLoading(true); // Set loading to true while fetching data
+    const data = await searchGithubUser(searchTerm); // Fetch data for the specific user
+    setCandidates([data]); // Update candidates state with fetched user data
+    setLoading(false); // Set loading to false after data is fetched
   };
 
+  // Function to save a candidate to local storage
   const saveToLocalStorage = (candidate: Candidate) => {
-    const savedCandidates = JSON.parse(localStorage.getItem('savedCandidates') || '[]');
-    savedCandidates.push(candidate);
-    localStorage.setItem('savedCandidates', JSON.stringify(savedCandidates));
+    const savedCandidates = JSON.parse(localStorage.getItem('savedCandidates') || '[]'); // Get saved candidates from local storage
+    savedCandidates.push(candidate); // Add new candidate to the saved list
+    localStorage.setItem('savedCandidates', JSON.stringify(savedCandidates)); // Save updated list back to local storage
   };
 
+  // Function to handle saving the current candidate
   const handleSave = () => {
-    if (candidates[currentIndex]) {
-      saveToLocalStorage(candidates[currentIndex]);
-      setCurrentIndex(currentIndex + 1);
+    if (candidates[currentIndex]) { // Check if there is a candidate at the current index
+      saveToLocalStorage(candidates[currentIndex]); // Save the current candidate to local storage
+      setCurrentIndex(currentIndex + 1); // Move to the next candidate
     }
   };
 

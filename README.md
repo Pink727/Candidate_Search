@@ -40,15 +40,23 @@ The Candidate Management App is a web application that allows users to search fo
    ```
 2. Open your browser and navigate to `http://localhost:3000`.
 
+## Deployed Site
+
+You can access the deployed site at [Candidate Management App](https://pink727-cs.netlify.app/).
+
+![Candidate Search](src/img/CandidateSearch.PNG)
+
+![Saved Candidates](src/img/SavedCandidates.PNG)
+
 ## Features
 
-- Filter candidates.
-- Sort candidates by Name, Location, Email, and Company.
-- Responsive design for mobile and desktop.
 - Search for potential candidates on GitHub.
 - Save candidate profiles to local storage.
 - View and manage the list of saved candidates.
 - Consistent navigation bar across all pages.
+- Filter candidates.
+- Sort candidates by Name, Location, Email, and Company.
+- Responsive design for mobile and desktop.
 
 ## Technologies Used
 

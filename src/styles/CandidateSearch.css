@@ -1,38 +1,43 @@
+/* Container for candidate cards */
 .candidate-container {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: center; /* Center align items horizontally */
 }
 
+/* Container for buttons */
 .button-container {
   display: flex;
-  justify-content: space-between;
-  width: 100%;
-  margin-top: 10px;
+  justify-content: space-between; /* Space out buttons evenly */
+  width: 100%; /* Full width */
+  margin-top: 10px; /* Margin at the top */
 }
 
+/* Styles for the save button */
 .save-button {
   background-color: green;
   color: white;
   border: none;
   padding: 12px 24px; /* Increase padding */
-  cursor: pointer;
-  flex: 1;
-  margin-right: 5px;
+  cursor: pointer; /* Pointer cursor on hover */
+  flex: 1; /* Allow button to grow */
+  margin-right: 5px; /* Margin to the right */
 }
 
+/* Styles for the skip button */
 .skip-button {
   background-color: red;
   color: white;
   border: none;
   padding: 12px 24px; /* Increase padding */
-  cursor: pointer;
-  flex: 1;
-  margin-left: 5px;
+  cursor: pointer; /* Pointer cursor on hover */
+  flex: 1; /* Allow button to grow */
+  margin-left: 5px; /* Margin to the left */
 }
 
+/* Styles for text input fields */
 input[type="text"] {
-  padding: 10px;
+  padding: 10px; /* Padding inside the input */
   font-size: 14px; /* Increase font size */
   width: 100%; /* Ensure it takes up available width */
 }

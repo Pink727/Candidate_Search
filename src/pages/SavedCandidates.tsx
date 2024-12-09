@@ -3,29 +3,37 @@ import Candidate from '../interfaces/Candidate.interface';
 import '../styles/SavedCandidates.css';
 
 const SavedCandidates: React.FC = () => {
+  // State to store the list of saved candidates
   const [savedCandidates, setSavedCandidates] = useState<Candidate[]>([]);
+  // State to store the key by which candidates will be sorted
   const [sortKey, setSortKey] = useState<string>('name');
+  // State to store the text used for filtering candidates
   const [filterText, setFilterText] = useState<string>('');
 
+  // Effect to load saved candidates from local storage when the component mounts
   useEffect(() => {
     const saved = JSON.parse(localStorage.getItem('savedCandidates') || '[]');
     setSavedCandidates(saved);
   }, []);
 
+  // Function to delete a candidate by id
   const deleteCandidate = (id: number) => {
     const updatedCandidates = savedCandidates.filter(candidate => candidate.id !== id);
     localStorage.setItem('savedCandidates', JSON.stringify(updatedCandidates));
     setSavedCandidates(updatedCandidates);
   };
 
+  // Function to handle sorting by a specific key
   const handleSort = (key: string) => {
     setSortKey(key);
   };
 
+  // Function to handle filtering based on input text
   const handleFilter = (event: React.ChangeEvent<HTMLInputElement>) => {
     setFilterText(event.target.value);
   };
 
+  // Function to get the list of candidates filtered by the filter text
   const getFilteredCandidates = () => {
     return savedCandidates.filter(candidate =>
       (candidate.name?.toLowerCase() ?? '').includes(filterText.toLowerCase()) ||
@@ -36,26 +44,30 @@ const SavedCandidates: React.FC = () => {
     );
   };
 
+  // Function to sort candidates based on the selected sort key
   const getSortedCandidates = (candidates: Candidate[]) => {
-    const key = sortKey as keyof Candidate;
+    const key = sortKey as keyof Candidate; // Determine the key to sort by
     return candidates.sort((a, b) => {
-      const aValue = a[key] ?? '';
-      const bValue = b[key] ?? '';
-      if (aValue < bValue) return -1;
-      if (aValue > bValue) return 1;
-      return 0;
+      const aValue = a[key] ?? ''; // Get the value of the key for candidate a
+      const bValue = b[key] ?? ''; // Get the value of the key for candidate b
+      if (aValue < bValue) return -1; // If a's value is less than b's value, sort a before b
+      if (aValue > bValue) return 1; // If a's value is greater than b's value, sort a after b
+      return 0; // If values are equal, maintain original order
     });
   };
 
+  // Get the filtered and sorted list of candidates to be displayed
   const displayedCandidates = getSortedCandidates(getFilteredCandidates());
 
   return (
     <div>
-      <h1>Saved Candidates</h1>
+      <h1>Potential Candidates</h1>
       <div className="filter-sort-container">
+        {/* Filter input field */}
         <label className="filter-label">
           Filter: <input type="text" value={filterText} onChange={handleFilter} className="filter-input" />
         </label>
+        {/* Sort dropdown */}
         <label className="sort-label">
           Sort by:
           <select value={sortKey} onChange={(e) => handleSort(e.target.value)}>
@@ -66,9 +78,11 @@ const SavedCandidates: React.FC = () => {
           </select>
         </label>
       </div>
+      {/* Display message if no candidates are available */}
       {displayedCandidates.length === 0 ? (
         <p>No candidates have been accepted.</p>
       ) : (
+        // Display table of candidates
         <table className="candidates-table">
           <thead>
             <tr>
