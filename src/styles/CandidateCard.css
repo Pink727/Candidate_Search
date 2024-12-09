@@ -8,6 +8,9 @@
   background-color: black;
   display: flex;
   flex-direction: column;
+  max-width: 300px; /* Set a maximum width */
+  width: 100%; /* Allow the card to shrink */
+  box-sizing: border-box; /* Include padding and border in the element's total width and height */
 }
 
 .candidate-card img {
@@ -23,8 +26,24 @@
   display: block;
   font-weight: bold;
   margin-bottom: 8px;
+  font-size: 1.2vw; /* Responsive font size */
 }
 
 .candidate-card p {
   margin: 4px 0;
+  font-size: 1vw; /* Responsive font size */
+}
+
+@media (max-width: 768px) {
+  .candidate-card {
+    max-width: 90vw; /* Adjust max width for smaller screens */
+  }
+
+  .candidate-card a {
+    font-size: 3vw; /* Adjust font size for smaller screens */
+  }
+
+  .candidate-card p {
+    font-size: 2.5vw; /* Adjust font size for smaller screens */
+  }
 }
