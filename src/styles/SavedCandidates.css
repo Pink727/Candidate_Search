@@ -44,7 +44,10 @@
 }
 
 /* Styles for images inside the table */
-.candidates-table img {
+.candidates-table img {  
+  height: 40px; 
+  width: 40px;
+  border-radius: 50%;
 }
 
 @media (max-width: 768px) {
@@ -56,6 +59,7 @@
   .candidates-table img {
     height: 40px; /* Adjust image size for smaller screens */
     width: 40px;
+    border-radius: 50%;
   }
 }
 
