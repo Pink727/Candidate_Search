@@ -1,33 +1,72 @@
-# React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Candidate Management App
 
-Currently, two official plugins are available:
+![License](https://img.shields.io/badge/license-MIT-blue.svg)
 
-* [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md), which uses [Babel](https://babeljs.io/) for Fast Refresh
-* [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc), which uses [SWC](https://swc.rs/) for Fast Refresh
+## Description
 
-## Expanding the ESLint configuration
+The Candidate Management App is a web application that allows users to search for potential candidates on GitHub, save their profiles, and manage the list of saved candidates. The app provides a consistent navigation experience across all pages with a fixed navigation bar.
 
-If you're developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Table of Contents
 
-* Configure the top-level `parserOptions` property as follows:
+- [Installation](#installation)
+- [Usage](#usage)
+- [Features](#features)
+- [Technologies Used](#technologies-used)
+- [License](#license)
+- [Contributing](#contributing)
+- [Questions](#questions)
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+## Installation
 
-* Replace `plugin:@typescript-eslint/recommended` with `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`.
-* Optionally, add `plugin:@typescript-eslint/stylistic-type-checked`.
-* Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` and `plugin:react/jsx-runtime` to the `extends` list.
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/your-username/candidate-management-app.git
+   ```
+2. Navigate to the project directory:
+   ```bash
+   cd candidate-management-app
+   ```
+3. Install the dependencies:
+   ```bash
+   npm install
+   ```
 
----
-© 2024 edX Boot Camps LLC. Confidential and Proprietary. All Rights Reserved.
+## Usage
+
+1. Start the development server:
+   ```bash
+   npm start
+   ```
+2. Open your browser and navigate to `http://localhost:3000`.
+
+## Features
+
+- Search for potential candidates on GitHub.
+- Save candidate profiles to local storage.
+- View and manage the list of saved candidates.
+- Consistent navigation bar across all pages.
+
+## Technologies Used
+
+- React
+- TypeScript
+- React Router
+- CSS
+
+## License
+This project is licensed under the [MIT License](https://opensource.org/license/mit).
+
+## Contributing
+
+Base files were provided by © 2024 edX Boot Camps
+
+
+## Questions
+For any questions, please contact me with the information below:
+
+GitHub: [Pink727](https://github.com/pink727)
+
+Email: doc72789@gmail.com
+
+© 2024 Pink727. All Rights Reserved.
