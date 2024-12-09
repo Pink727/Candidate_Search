@@ -1,0 +1,22 @@
+.candidate-container {
+  display: flex;
+  align-items: center;
+}
+
+.save-button {
+  background-color: green;
+  color: white;
+  border: none;
+  padding: 10px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.skip-button {
+  background-color: red;
+  color: white;
+  border: none;
+  padding: 10px;
+  margin-left: 10px;
+  cursor: pointer;
+}

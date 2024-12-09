@@ -42,6 +42,9 @@ The Candidate Management App is a web application that allows users to search fo
 
 ## Features
 
+- Filter candidates.
+- Sort candidates by Name, Location, Email, and Company.
+- Responsive design for mobile and desktop.
 - Search for potential candidates on GitHub.
 - Save candidate profiles to local storage.
 - View and manage the list of saved candidates.

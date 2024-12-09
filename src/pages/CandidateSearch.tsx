@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { searchGithub, searchGithubUser } from '../api/API';
 import CandidateCard from '../components/CandidateCard';
 import Candidate from '../interfaces/Candidate.interface';
+import '../styles/CandidateSearch.css';
 
 const CandidateSearch = () => {
   const [candidates, setCandidates] = useState<Candidate[]>([]);
@@ -62,11 +63,11 @@ const CandidateSearch = () => {
       ) : (
         <ul>
           {candidates.length > 0 && currentIndex < candidates.length ? (
-            <>
+            <div className="candidate-container">
+              <button className="save-button" onClick={handleSave}>+</button>
               <CandidateCard key={candidates[currentIndex].id} candidate={candidates[currentIndex]} />
-              <button onClick={handleSave}>+</button>
-              <button onClick={handleSkip}>-</button>
-            </>
+              <button className="skip-button" onClick={handleSkip}>-</button>
+            </div>
           ) : (
             <p>No more candidates available.</p>
           )}
