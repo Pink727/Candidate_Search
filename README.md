@@ -82,4 +82,5 @@ GitHub: [Pink727](https://github.com/pink727)
 
 Email: doc72789@gmail.com
 
+____________________________________
 © 2024 Pink727. All Rights Reserved.
