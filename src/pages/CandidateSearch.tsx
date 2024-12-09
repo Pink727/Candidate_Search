@@ -55,9 +55,11 @@ const CandidateSearch = () => {
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
           placeholder="Search by username"
-        />
+        /> 
+        <br />
         <button type="submit">Search</button>
       </form>
+     
       {loading ? (
         <p>Loading...</p>
       ) : (
